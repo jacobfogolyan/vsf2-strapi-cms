@@ -1,0 +1,58 @@
+{
+  "name": "strapi-cms",
+  "version": "1.0.0",
+  "author": "Strapi CMS Integration with Vue Storefront",
+  "license": "MIT",
+  "main": "lib/index.cjs.js",
+  "module": "lib/index.es.js",
+  "server": "server/index.js",
+  "scripts": {
+    "build": "rollup -c && rm -r -- ./server/*/",
+    "build:clean": "rollup -c && rm -r -- ./lib/*/ && rm -r -- ./server/*/",
+    "dev": "rollup -c -w",
+    "test": "jest --passWithNoTests",
+    "lint": "eslint --ext .js,.ts --ignore-path .eslintignore .",
+    "prepublish": "yarn build"
+  },
+  "lint-staged": {
+    "*.{js,ts,vue}": "eslint --ext .js,.ts --ignore-path .eslintignore ."
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "keywords": [
+    "vuestorefront",
+    "vue-storefront",
+    "strapi",
+    "cms",
+    "integration",
+    "vue",
+    "vuejs"
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "@jest/globals": "^28.1.3",
+    "@typescript-eslint/eslint-plugin": "^5.30.6",
+    "@typescript-eslint/parser": "^5.30.6",
+    "eslint": "^8.19.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^9.2.0",
+    "husky": "^8.0.1",
+    "jest": "^28.1.3",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "rollup": "^2.77.0",
+    "rollup-plugin-typescript2": "^0.32.1",
+    "ts-jest": "^28.0.6",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "@vue-storefront/core": "^2.7.1",
+    "axios": "0.21.1"
+  }
+}
