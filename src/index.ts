@@ -1,3 +1,1 @@
-module.exports = function (options) {
-    console.log(options)
-}
+export * from './composables'

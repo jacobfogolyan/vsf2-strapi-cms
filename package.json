@@ -53,6 +53,6 @@
   },
   "dependencies": {
     "@vue-storefront/core": "^2.7.1",
-    "axios": "0.21.1"
+    "strapi-sdk-js": "^2.2.0"
   }
 }

@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "outDir": "./dist",
-    "esModuleInterop": true,
+    "esModuleInterop": false,
     "target": "es5",
     "module": "ES2015",
     "moduleResolution": "node",
