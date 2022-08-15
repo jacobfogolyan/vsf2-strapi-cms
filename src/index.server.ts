@@ -1,15 +1,10 @@
 import { apiClientFactory } from '@vue-storefront/core'
-import { getContent } from './api'
+import * as api from './api'
 import type { StrapiOptions } from 'strapi-sdk-js'
 import Strapi from 'strapi-sdk-js'
 
 const setup = (options: StrapiOptions) => {
-  const allOptions = {
-    url: 'http://localhost:1337',
-    prefix: '/api',
-    axiosOptions: {},
-  }
-  const client = new Strapi(allOptions)
+  const client = new Strapi(options)
   return {
     client,
     config: {
@@ -20,9 +15,7 @@ const setup = (options: StrapiOptions) => {
 
 const { createApiClient } = apiClientFactory({
   onCreate: setup,
-  api: {
-    getContent,
-  },
+  api,
 })
 
 export { createApiClient }
