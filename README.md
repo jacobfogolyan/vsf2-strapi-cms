@@ -1,4 +1,4 @@
-# Strapi CMS v4 Vue Storefront Integartion / Nuxt
+# Strapi CMS v4 Vue Storefront Integration / Nuxt
 
 ## Installation
 
