@@ -1,7 +1,7 @@
 {
-  "name": "vsf2-strapi-cms-integration",
+  "name": "@jfogolyan/vsf2-strapi-cms-integration",
   "version": "1.0.0",
-  "author": "Strapi CMS Integration with Vue Storefront",
+  "author": "Jacob Fogolyan",
   "license": "MIT",
   "main": "lib/index.cjs.js",
   "module": "lib/index.es.js",
