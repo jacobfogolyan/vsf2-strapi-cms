@@ -10,7 +10,7 @@ export const getContent = async (
     id,
     find = false,
     findOne = false,
-    sort = 'Title',
+    sort,
     pagination,
     filters,
     locale,
@@ -25,6 +25,7 @@ export const getContent = async (
   }
 
   if (!contentType) {
+    Logger.warn('contentType must be specified, eg "blog-post" or "blog-posts"')
     return
   }
 
@@ -38,8 +39,6 @@ export const getContent = async (
 
   try {
     const { data } = await method
-
-    console.log(data)
     return data
   } catch (error) {
     Logger.warn('error', error)
