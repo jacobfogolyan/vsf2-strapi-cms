@@ -1,7 +1,7 @@
 import path from 'path'
 
 // eslint-disable-next-line
-export default function storyblok(moduleOptions) {
+export default function strapi(moduleOptions) {
   const { strapi } = this.options
   const options = {
     ...strapi,

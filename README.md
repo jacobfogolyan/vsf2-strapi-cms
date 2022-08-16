@@ -8,7 +8,7 @@ module.exports = {
     integrations: {
         ...
         strapi: {
-            location: "strapi-cms/server",
+            location: "vsf2-strapi-cms/server",
             configuration: {
                 url: 'http://localhost:1337',
                 prefix: '/api',
@@ -27,17 +27,17 @@ module.exports = {
         useRawSource: {
             dev: [
                 ...,
-                'strapi-cms'
+                'vsf2-strapi-cms'
             ],
             prod: [
                 ...,
-                'strapi-cms'
+                'vsf2-strapi-cms'
             ]
         }
         }]
     ],
     modules: [
-        ['strapi-cms/nuxt', { } ],    
+        ['vsf2-strapi-cms/nuxt', { } ],    
     ]
 ```
 
@@ -46,10 +46,12 @@ module.exports = {
 
 ```javascript
 // .vue component
-import { useContent } from 'strapi-cms'
+import { useContent } from 'vsf2-strapi-cms'
 
 export default {
     setup() {
+        const { search: searchContent, loading, content } = useContent()
+
         onSSR(async () => {
           await searchContent({
             contentType: "blog-posts",
@@ -57,6 +59,11 @@ export default {
             sort: "Title"
           })
         });
+
+        return {
+            loading,
+            content
+        }
     }
 }
 ```
