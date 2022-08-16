@@ -29,6 +29,10 @@ export const getContent = async (
     return
   }
 
+  if (find && findOne) {
+    Logger.warn('Please choose a one serch method')
+  }
+
   if (find && !id && !findOne) {
     method = Strapi.find(contentType, params)
   } else if (find && id) {
