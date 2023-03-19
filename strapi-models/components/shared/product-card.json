@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_shared_product_cards",
+  "info": {
+    "displayName": "Product Card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "link": {
+      "type": "string"
+    },
+    "reviews_count": {
+      "type": "integer"
+    },
+    "regular_price": {
+      "type": "decimal"
+    },
+    "Component": {
+      "type": "string",
+      "default": "ProductCard"
+    }
+  }
+}
